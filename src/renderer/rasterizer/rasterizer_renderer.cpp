@@ -12,7 +12,11 @@ void cg::renderer::rasterization_renderer::init()
 	render_target = std::make_shared<cg::resource<cg::unsigned_color>>(
 			settings->width,
 			settings->height);
-	rasterizer->set_render_target(render_target);
+	depth_buffer = std::make_shared<cg::resource<float>>(
+			settings->width,
+			settings->height);
+	rasterizer->set_render_target(render_target, depth_buffer);
+
 	// TODO Lab: 1.03 Adjust `cg::renderer::rasterization_renderer` class to consume `cg::world::model`
 
 	model = std::make_shared<cg::world::model>();
