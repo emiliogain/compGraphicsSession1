@@ -40,8 +40,8 @@ namespace cg::renderer
 		std::shared_ptr<cg::resource<RT>> render_target;
 		std::shared_ptr<cg::resource<float>> depth_buffer;
 
-		size_t width = 1920;
-		size_t height = 1080;
+		size_t width = 2560;
+		size_t height = 1440;
 
 		float edge_function(float2 a, float2 b, float2 c);
 		bool depth_test(float z, size_t x, size_t y);
